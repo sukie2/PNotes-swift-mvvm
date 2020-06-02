@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  NoteDisplayViewController.swift
 //  PNotes
 //
 //  Created by Sukitha on 1/6/20.
@@ -8,8 +8,10 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
-
+class NoteDisplayViewController: UIViewController {
+    
+    var viewModel: NoteViewModel? = nil
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let detail = detailItem {
@@ -31,7 +33,8 @@ class DetailViewController: UIViewController {
     }
     
     @objc func saveNote(){
-        
+        viewModel?.addNewNote()
+        self.navigationController?.popViewController(animated: true)
     }
 
 
