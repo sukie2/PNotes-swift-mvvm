@@ -7,5 +7,8 @@
 ## External libraries used
  - Realm https://realm.io/docs/swift/latest
  - DZN EmptyData Set https://github.com/dzenbot/DZNEmptyDataSet
+
+![](Screenshots/img1.png) 
+![](Screenshots/img2.png) 
  
 Please run pod install before building the project.
