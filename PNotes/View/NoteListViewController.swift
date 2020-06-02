@@ -25,6 +25,7 @@ class NoteListViewController: UITableViewController {
             let controllers = split.viewControllers
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? NoteDisplayViewController
         }
+        registerTableViewCells()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,15 +36,22 @@ class NoteListViewController: UITableViewController {
     }
     
     @objc func newNoteAction(_ sender: Any) {
-        navigateToNoteDetails(noteID: -1)
+        navigateToNoteDetails(note: Note())
     }
     
-    func navigateToNoteDetails(noteID: Int){
+    private func navigateToNoteDetails(note: Note){
         let noteDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NoteDisplayViewController") as! NoteDisplayViewController;
         noteDetailViewController.viewModel = viewModel
+        noteDetailViewController.note = note
         self.navigationController?.pushViewController(noteDetailViewController, animated: true)
     }
     
+    private func registerTableViewCells() {
+        let textFieldCell = UINib(nibName: "NoteCell",
+                                  bundle: nil)
+        self.tableView.register(textFieldCell,
+                                forCellReuseIdentifier: "NoteCell")
+    }
     
     // MARK: - Table View
     
@@ -56,16 +64,13 @@ class NoteListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell") as? NoteCell
+
         let note = noteList[indexPath.row] as! Note
-        cell.textLabel!.text = note.noteTitle
-        return cell
+        cell?.labelTitle!.text = note.noteTitle
+        return cell!
     }
-    
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
+
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -73,14 +78,12 @@ class NoteListViewController: UITableViewController {
             viewModel.deleteNote(note: noteToDelete as! Note)
             noteList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        navigateToNoteDetails(noteID: 0)
+        let note = noteList[indexPath.row]
+        navigateToNoteDetails(note: note as! Note)
     }
     
 }

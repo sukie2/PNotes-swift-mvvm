@@ -30,13 +30,11 @@ class NoteRepository{
          }
     }
     
-    func editNote(note: Note){
+    func updateNote(note: Note){
         let fliteredNotes = realm.objects(Note.self).filter("noteID = %@", note.noteID)
-
-        let realm = try! Realm()
         if let noteToEdit = fliteredNotes.first {
             try! realm.write {
-                noteToEdit.noteData = note.noteTitle
+                noteToEdit.noteTitle = note.noteTitle
                 noteToEdit.noteData = note.noteData
                 noteToEdit.noteEditTime = note.noteEditTime
             }

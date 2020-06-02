@@ -9,17 +9,26 @@
 import Foundation
 
 class NoteUtility: NSObject {
+    
     static func getConfigureNote(note: Note) -> Note{
         var configuredNote = configureID(note: note)
         configuredNote = configureTitle(note: configuredNote)
-        
+        configuredNote = configureEditTime(note: configuredNote)
         return configuredNote
     }
     
-    static func configureID(note: Note)-> Note{
+    static func getTimeStamp() -> Int{
         let since1970 = Date().timeIntervalSince1970
-        note.noteID = Int(since1970 * 1000)
-        
+        return Int(since1970 * 1000)
+    }
+    
+    static func configureID(note: Note)-> Note{
+        note.noteID = getTimeStamp()
+        return note
+    }
+    
+    static func configureEditTime(note: Note)-> Note{
+        note.noteEditTime = getTimeStamp()
         return note
     }
     

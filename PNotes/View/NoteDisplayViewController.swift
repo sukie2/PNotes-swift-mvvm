@@ -5,17 +5,21 @@
 //  Created by Sukitha on 1/6/20.
 //  Copyright © 2020 Sukitha. All rights reserved.
 //
-
 import UIKit
 
 class NoteDisplayViewController: UIViewController {
     
+    @IBOutlet weak var tfTitle: UITextField!
+    @IBOutlet weak var tvData: UITextView!
+    
     var viewModel: NoteViewModel? = nil
+    var note: Note? = nil
     
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail = detailItem {
-
+        if(note != nil){
+            tfTitle.text = note?.noteTitle ?? ""
+            tvData.text = note?.noteData ?? ""
         }
     }
 
@@ -33,10 +37,10 @@ class NoteDisplayViewController: UIViewController {
     }
     
     @objc func saveNote(){
-        viewModel?.addNewNote()
+        let title = tfTitle.text ?? ""
+        let data = tvData.text ?? ""
+        viewModel?.saveNote(note: note, title: title, data: data)
         self.navigationController?.popViewController(animated: true)
     }
-
-
 }
 
