@@ -19,8 +19,9 @@
 		8383E3E12484DD8300458251 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3E02484DD8300458251 /* Note.swift */; };
 		8383E3E42484E0F800458251 /* NoteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3E32484E0F800458251 /* NoteRepository.swift */; };
 		8383E3E62484E1AD00458251 /* NoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3E52484E1AD00458251 /* NoteViewModel.swift */; };
-		8383E3E92484F4B000458251 /* ResultExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3E82484F4B000458251 /* ResultExt.swift */; };
+		8383E3E92484F4B000458251 /* Result+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3E82484F4B000458251 /* Result+Extentions.swift */; };
 		8383E3EB24851ED300458251 /* NoteUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3EA24851ED300458251 /* NoteUtility.swift */; };
+		8383E3ED2485F63800458251 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3EC2485F63800458251 /* DispatchQueue+Extensions.swift */; };
 		DCB08B0C62C19C5F6DB63760 /* Pods_PNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1AC012A04AF27D50877873 /* Pods_PNotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,8 +57,9 @@
 		8383E3E02484DD8300458251 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		8383E3E32484E0F800458251 /* NoteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRepository.swift; sourceTree = "<group>"; };
 		8383E3E52484E1AD00458251 /* NoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewModel.swift; sourceTree = "<group>"; };
-		8383E3E82484F4B000458251 /* ResultExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExt.swift; sourceTree = "<group>"; };
+		8383E3E82484F4B000458251 /* Result+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Extentions.swift"; sourceTree = "<group>"; };
 		8383E3EA24851ED300458251 /* NoteUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteUtility.swift; sourceTree = "<group>"; };
+		8383E3EC2485F63800458251 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		B165B639803C962B064B4BBF /* Pods-PNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNotesTests.release.xcconfig"; path = "Target Support Files/Pods-PNotesTests/Pods-PNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		B49141A113F11D369D8CBF3E /* Pods_PNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60A5BEDCFEC901BBC0176DA /* Pods-Notes2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes2.debug.xcconfig"; path = "Target Support Files/Pods-Notes2/Pods-Notes2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -191,8 +193,9 @@
 		8383E3E72484F49200458251 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				8383E3E82484F4B000458251 /* ResultExt.swift */,
+				8383E3E82484F4B000458251 /* Result+Extentions.swift */,
 				8383E3EA24851ED300458251 /* NoteUtility.swift */,
+				8383E3EC2485F63800458251 /* DispatchQueue+Extensions.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -366,8 +369,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8383E3E62484E1AD00458251 /* NoteViewModel.swift in Sources */,
-				8383E3E92484F4B000458251 /* ResultExt.swift in Sources */,
+				8383E3E92484F4B000458251 /* Result+Extentions.swift in Sources */,
 				8383E3E12484DD8300458251 /* Note.swift in Sources */,
+				8383E3ED2485F63800458251 /* DispatchQueue+Extensions.swift in Sources */,
 				8383E35924848C3E00458251 /* AppDelegate.swift in Sources */,
 				8383E35B24848C3E00458251 /* SceneDelegate.swift in Sources */,
 				8383E3E42484E0F800458251 /* NoteRepository.swift in Sources */,

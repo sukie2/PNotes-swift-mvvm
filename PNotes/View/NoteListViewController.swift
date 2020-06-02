@@ -11,7 +11,7 @@ import UIKit
 class NoteListViewController: UITableViewController {
     var detailViewController: NoteDisplayViewController? = nil
     var viewModel: NoteViewModel = NoteViewModel(withRepository: NoteRepository())
-    var objects = [Any]()
+    var noteList = [Any]()
     
     
     override func viewDidLoad() {
@@ -29,8 +29,9 @@ class NoteListViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        objects = viewModel.getNotesList()
+        self.noteList = self.viewModel.getNotesList()
         self.tableView.reloadData()
+        
     }
     
     @objc func newNoteAction(_ sender: Any) {
@@ -43,18 +44,6 @@ class NoteListViewController: UITableViewController {
         self.navigationController?.pushViewController(noteDetailViewController, animated: true)
     }
     
-//    // MARK: - Segues
-//    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "showDetail" {
-//            guard let indexPath = tableView.indexPathForSelectedRow else { return }
-//            if let controller = segue.destination as? NoteDisplayViewController {
-//                let object = objects[indexPath.row] as! NSDate
-//                controller.detailItem = object
-//            }
-//        }
-//    }
     
     // MARK: - Table View
     
@@ -63,12 +52,12 @@ class NoteListViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return noteList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let note = objects[indexPath.row] as! Note
+        let note = noteList[indexPath.row] as! Note
         cell.textLabel!.text = note.noteTitle
         return cell
     }
@@ -80,9 +69,9 @@ class NoteListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let noteToDelete = objects[indexPath.row]
+            let noteToDelete = noteList[indexPath.row]
             viewModel.deleteNote(note: noteToDelete as! Note)
-            objects.remove(at: indexPath.row)
+            noteList.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
             
         } else if editingStyle == .insert {
@@ -93,6 +82,6 @@ class NoteListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         navigateToNoteDetails(noteID: 0)
     }
-
+    
 }
 

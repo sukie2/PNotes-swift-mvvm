@@ -29,4 +29,8 @@ class NoteViewModel: NSObject{
         return repositiry.getNotesList()
     }
     
+    func editNote(note: Note){
+        repositiry.editNote(note: note)
+    }
+    
 }

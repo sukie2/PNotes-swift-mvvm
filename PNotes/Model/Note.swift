@@ -10,7 +10,8 @@ import Foundation
 import RealmSwift
 
 class Note: Object{
-    @objc dynamic var noteID = 0
-    @objc dynamic var noteTitle = "Default"
+    @objc dynamic var noteID: Int = 0
+    @objc dynamic var noteTitle = ""
     @objc dynamic var noteData = ""
+    @objc dynamic var noteEditTime: Int = 0
 }
