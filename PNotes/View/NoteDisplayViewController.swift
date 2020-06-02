@@ -22,6 +22,11 @@ class NoteDisplayViewController: UIViewController {
             tvData.text = note?.noteData ?? ""
         }
         
+        if(note?.noteTitle == ""){
+            self.title = "New Note"
+        }else{
+            self.title = "Edit Note"
+        }
     }
 
     override func viewDidLoad() {
@@ -31,11 +36,7 @@ class NoteDisplayViewController: UIViewController {
         self.tvData.layer.borderColor = UIColor.lightGray.cgColor
         self.tvData.layer.borderWidth = 1
         
-        if(note?.noteTitle == ""){
-            self.title = "New Note"
-        }else{
-            self.title = "Edit Note"
-        }
+        configureView()
         
     }
     
