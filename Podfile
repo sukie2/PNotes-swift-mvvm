@@ -8,6 +8,7 @@ target 'PNotes' do
   # Pod for PNotes
 
   pod 'RealmSwift'
+  pod 'DZNEmptyDataSet'
 
   target 'PNotesTests' do
     inherit! :search_paths

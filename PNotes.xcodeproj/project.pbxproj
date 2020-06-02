@@ -24,6 +24,7 @@
 		8383E3ED2485F63800458251 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3EC2485F63800458251 /* DispatchQueue+Extensions.swift */; };
 		8383E3F02485FA1D00458251 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8383E3EE2485FA1D00458251 /* NoteCell.swift */; };
 		8383E3F12485FA1D00458251 /* NoteCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8383E3EF2485FA1D00458251 /* NoteCell.xib */; };
+		8383E3F32486715A00458251 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 8383E3F22486715A00458251 /* logo.png */; };
 		DCB08B0C62C19C5F6DB63760 /* Pods_PNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E1AC012A04AF27D50877873 /* Pods_PNotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		8383E3EC2485F63800458251 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		8383E3EE2485FA1D00458251 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		8383E3EF2485FA1D00458251 /* NoteCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteCell.xib; sourceTree = "<group>"; };
+		8383E3F22486715A00458251 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		B165B639803C962B064B4BBF /* Pods-PNotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PNotesTests.release.xcconfig"; path = "Target Support Files/Pods-PNotesTests/Pods-PNotesTests.release.xcconfig"; sourceTree = "<group>"; };
 		B49141A113F11D369D8CBF3E /* Pods_PNotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PNotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60A5BEDCFEC901BBC0176DA /* Pods-Notes2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes2.debug.xcconfig"; path = "Target Support Files/Pods-Notes2/Pods-Notes2.debug.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				8383E3DD2484DC1600458251 /* View */,
 				8383E36324848C4000458251 /* Assets.xcassets */,
 				8383E36824848C4000458251 /* Info.plist */,
+				8383E3F22486715A00458251 /* logo.png */,
 			);
 			path = PNotes;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8383E36724848C4000458251 /* LaunchScreen.storyboard in Resources */,
+				8383E3F32486715A00458251 /* logo.png in Resources */,
 				8383E36424848C4000458251 /* Assets.xcassets in Resources */,
 				8383E36224848C3E00458251 /* Main.storyboard in Resources */,
 				8383E3F12485FA1D00458251 /* NoteCell.xib in Resources */,

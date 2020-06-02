@@ -26,14 +26,10 @@ class NoteDisplayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveNote))
-        configureView()
-    }
-
-    var detailItem: NSDate? {
-        didSet {
-            // Update the view.
-            configureView()
-        }
+        
+        self.tvData.layer.borderColor = UIColor.lightGray.cgColor
+        self.tvData.layer.borderWidth = 1
+        
     }
     
     @objc func saveNote(){

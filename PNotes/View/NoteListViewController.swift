@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class NoteListViewController: UITableViewController {
+class NoteListViewController: UITableViewController, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     var detailViewController: NoteDisplayViewController? = nil
     var viewModel: NoteViewModel = NoteViewModel(withRepository: NoteRepository())
     var noteList = [Any]()
@@ -26,6 +27,11 @@ class NoteListViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? NoteDisplayViewController
         }
         registerTableViewCells()
+        
+        // For empty data set message
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,12 +71,12 @@ class NoteListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NoteCell") as? NoteCell
-
+        
         let note = noteList[indexPath.row] as! Note
         cell?.labelTitle!.text = note.noteTitle
         return cell!
     }
-
+    
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -86,5 +92,20 @@ class NoteListViewController: UITableViewController {
         navigateToNoteDetails(note: note as! Note)
     }
     
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Welcome"
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "Tap the + button to add your first note"
+        let attrs = [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "logo")
+    }
 }
 
