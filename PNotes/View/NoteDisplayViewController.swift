@@ -21,6 +21,7 @@ class NoteDisplayViewController: UIViewController {
             tfTitle.text = note?.noteTitle ?? ""
             tvData.text = note?.noteData ?? ""
         }
+        
     }
 
     override func viewDidLoad() {
