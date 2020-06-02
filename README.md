@@ -8,8 +8,6 @@
  - Realm https://realm.io/docs/swift/latest
  - DZN EmptyData Set https://github.com/dzenbot/DZNEmptyDataSet
 
-![Image description](https://github.com/sukie2/PNotes-swift-mvvm/blob/master/Screenshots/img1.png)
-![](Screenshots/img1.png =480x1039)
-![](Screenshots/img2.png =480x1039)
+![Image description](https://github.com/sukie2/PNotes-swift-mvvm/blob/master/Screenshots/img1.png) ![Image description](https://github.com/sukie2/PNotes-swift-mvvm/blob/master/Screenshots/img1\2.png)
  
 Please run pod install before building the project.
