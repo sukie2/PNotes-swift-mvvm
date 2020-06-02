@@ -30,6 +30,12 @@ class NoteDisplayViewController: UIViewController {
         self.tvData.layer.borderColor = UIColor.lightGray.cgColor
         self.tvData.layer.borderWidth = 1
         
+        if(note?.noteTitle == ""){
+            self.title = "New Note"
+        }else{
+            self.title = "Edit Note"
+        }
+        
     }
     
     @objc func saveNote(){

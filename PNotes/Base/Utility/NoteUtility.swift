@@ -34,7 +34,7 @@ class NoteUtility: NSObject {
     
     static func configureTitle(note: Note) -> Note {
         if(note.noteTitle.isEmpty){
-            note.noteTitle = "Default"
+            note.noteTitle = "New Note"
         }
         return note
     }
